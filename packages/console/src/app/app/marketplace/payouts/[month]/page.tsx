@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Layout from '@/components/Layout';
+import { api, type OrgMonthlyStatement } from '@/lib/api';
 
 export default function StatementDetailPage() {
   const params = useParams();
