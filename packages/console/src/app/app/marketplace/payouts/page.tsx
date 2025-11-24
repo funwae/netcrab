@@ -1,11 +1,10 @@
 'use client';
 
-import Layout from '@/components/Layout';
 import Link from 'next/link';
 
 export default function PayoutsPage() {
   return (
-    <Layout>
+
       <div className="space-y-6">
         <h1 className="text-3xl font-bold text-netcrab-text">Payouts & Statements</h1>
 
@@ -108,7 +107,7 @@ export default function PayoutsPage() {
           </button>
         </div>
       </div>
-    </Layout>
+
   );
 }
 

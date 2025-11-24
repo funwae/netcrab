@@ -1,6 +1,5 @@
 'use client';
 
-import Layout from '@/components/Layout';
 import { api, type OptInSettings } from '@/lib/api';
 import { useEffect, useState } from 'react';
 
@@ -66,7 +65,7 @@ export default function OptInPage() {
 
   if (loading) {
     return (
-      <Layout>
+
         <div className="space-y-6">
           <div className="h-8 bg-netcrab-surface rounded w-1/3 animate-pulse"></div>
           <div className="bg-netcrab-card rounded-lg border border-netcrab-surface p-6">
@@ -77,24 +76,24 @@ export default function OptInPage() {
             </div>
           </div>
         </div>
-      </Layout>
+
     );
   }
 
   if (error && !settings) {
     return (
-      <Layout>
+
         <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4">
           <p className="text-netcrab-crab">{error}</p>
         </div>
-      </Layout>
+
     );
   }
 
   if (!settings) return null;
 
   return (
-    <Layout>
+
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold text-netcrab-text">Data Sharing & Marketplace Participation</h1>
@@ -195,7 +194,7 @@ export default function OptInPage() {
           </button>
         </div>
       </div>
-    </Layout>
+
   );
 }
 

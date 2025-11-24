@@ -18,7 +18,6 @@ export default function ConsoleTopbar() {
           />
         </div>
         <div className="flex items-center gap-4">
-          <span className="px-2 py-1 bg-netcrab-aqua/20 text-netcrab-aqua text-xs rounded">Demo Mode</span>
           <div className="w-8 h-8 rounded-full bg-netcrab-card border border-netcrab-surface"></div>
         </div>
       </div>

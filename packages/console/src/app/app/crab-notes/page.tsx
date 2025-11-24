@@ -1,6 +1,5 @@
 'use client';
 
-import Layout from '@/components/Layout';
 import { api, type CrabNote } from '@/lib/api';
 import { useEffect, useState } from 'react';
 
@@ -27,21 +26,21 @@ export default function CrabNotesPage() {
 
   if (loading) {
     return (
-      <Layout>
+
         <div className="flex items-center justify-center h-64">
           <div className="text-netcrab-muted">Loading Crab Notes...</div>
         </div>
-      </Layout>
+
     );
   }
 
   if (error) {
     return (
-      <Layout>
+
         <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4 text-netcrab-crab">
           Error: {error}
         </div>
-      </Layout>
+
     );
   }
 
@@ -76,7 +75,7 @@ export default function CrabNotesPage() {
   };
 
   return (
-    <Layout>
+
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl font-bold text-netcrab-text">Crab Notes</h1>
@@ -146,7 +145,7 @@ export default function CrabNotesPage() {
           </div>
         )}
       </div>
-    </Layout>
+
   );
 }
 

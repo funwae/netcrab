@@ -1,6 +1,5 @@
 'use client';
 
-import Layout from '@/components/Layout';
 import { api, type OrgMonthlyStatement } from '@/lib/api';
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -33,7 +32,7 @@ export default function StatementDetailPage() {
 
       if (loading) {
         return (
-          <Layout>
+
             <div className="space-y-6">
               <div className="h-8 bg-netcrab-surface rounded w-1/3 animate-pulse"></div>
               <div className="bg-netcrab-card rounded-lg border border-netcrab-surface p-6">
@@ -45,20 +44,20 @@ export default function StatementDetailPage() {
                 </div>
               </div>
             </div>
-          </Layout>
+
         );
       }
 
       if (error || !statement) {
         return (
-          <Layout>
+
             <div className="space-y-6">
               <h1 className="text-3xl font-bold text-netcrab-text">Statement</h1>
               <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4">
                 <p className="text-netcrab-crab">{error || 'Statement not found'}</p>
               </div>
             </div>
-          </Layout>
+
         );
       }
 
@@ -66,7 +65,7 @@ export default function StatementDetailPage() {
       const monthName = monthDate.toLocaleString('default', { month: 'long', year: 'numeric' });
 
       return (
-        <Layout>
+
           <div className="space-y-6">
             <div>
               <h1 className="text-3xl font-bold text-netcrab-text">Statement for {monthName}</h1>
@@ -137,7 +136,7 @@ export default function StatementDetailPage() {
               </div>
             </div>
           </div>
-        </Layout>
+
       );
 }
 

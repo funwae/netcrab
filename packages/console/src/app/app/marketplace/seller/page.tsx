@@ -1,10 +1,7 @@
 'use client';
-
-import Layout from '@/components/Layout';
-
 export default function SellerMarketplacePage() {
   return (
-    <Layout>
+
       <div className="space-y-6">
         <h1 className="text-3xl font-bold text-navy-900">Marketplace - Your Contributions</h1>
 
@@ -74,7 +71,7 @@ export default function SellerMarketplacePage() {
           </div>
         </div>
       </div>
-    </Layout>
+
   );
 }
 

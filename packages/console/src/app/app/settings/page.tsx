@@ -1,10 +1,7 @@
 'use client';
-
-import Layout from '@/components/Layout';
-
 export default function SettingsPage() {
   return (
-    <Layout>
+
       <div className="space-y-6">
         <h1 className="text-3xl font-bold text-netcrab-text">Settings</h1>
 
@@ -106,7 +103,7 @@ export default function SettingsPage() {
           </div>
         </div>
       </div>
-    </Layout>
+
   );
 }
 

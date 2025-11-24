@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Layout from '@/components/Layout';
 import { api, type OverviewResponse } from '@/lib/api';
 
 export default function OverviewPage() {
@@ -27,39 +26,32 @@ export default function OverviewPage() {
 
   if (loading) {
     return (
-      <Layout>
-        <div className="space-y-6">
-          <div className="h-8 bg-netcrab-card rounded w-1/3 animate-pulse"></div>
-          <div className="grid grid-cols-3 gap-4">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-32 bg-netcrab-card rounded animate-pulse"></div>
-            ))}
-          </div>
+      <div className="space-y-6">
+        <div className="h-8 bg-netcrab-card rounded w-1/3 animate-pulse"></div>
+        <div className="grid grid-cols-3 gap-4">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="h-32 bg-netcrab-card rounded animate-pulse"></div>
+          ))}
         </div>
-      </Layout>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <Layout>
-        <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4">
-          <p className="text-netcrab-crab">Error loading overview: {error}</p>
-        </div>
-      </Layout>
+      <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4">
+        <p className="text-netcrab-crab">Error loading overview: {error}</p>
+      </div>
     );
   }
 
   if (!data) {
     return (
-      <Layout>
-        <div className="text-netcrab-muted">No data available</div>
-      </Layout>
+      <div className="text-netcrab-muted">No data available</div>
     );
   }
 
   return (
-    <Layout>
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold text-netcrab-text">Overview</h1>
@@ -128,6 +120,5 @@ export default function OverviewPage() {
           </div>
         )}
       </div>
-    </Layout>
   );
 }

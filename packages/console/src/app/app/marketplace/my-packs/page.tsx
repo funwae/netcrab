@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Layout from '@/components/Layout';
 import Link from 'next/link';
 import ApiKeyManager from '@/components/ApiKeyManager';
 import { api } from '@/lib/api';
@@ -52,7 +51,7 @@ export default function MyPacksPage() {
 
   if (loading) {
     return (
-      <Layout>
+
         <div className="space-y-6">
           <h1 className="text-3xl font-bold text-netcrab-text">My Packs</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -66,13 +65,13 @@ export default function MyPacksPage() {
             ))}
           </div>
         </div>
-      </Layout>
+
     );
   }
 
   if (error) {
     return (
-      <Layout>
+
         <div className="space-y-6">
           <h1 className="text-3xl font-bold text-netcrab-text">My Packs</h1>
           <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4">
@@ -85,13 +84,13 @@ export default function MyPacksPage() {
             </button>
           </div>
         </div>
-      </Layout>
+
     );
   }
 
   if (packs.length === 0) {
     return (
-      <Layout>
+
         <div className="space-y-6">
           <h1 className="text-3xl font-bold text-netcrab-text">My Packs</h1>
           <div className="bg-netcrab-card rounded-lg border border-netcrab-surface p-12 text-center">
@@ -105,7 +104,7 @@ export default function MyPacksPage() {
             </Link>
           </div>
         </div>
-      </Layout>
+
     );
   }
 
@@ -113,7 +112,7 @@ export default function MyPacksPage() {
   const totalRowLimit = packs.reduce((sum, p) => sum + p.usage.rowLimit, 0);
 
   return (
-    <Layout>
+
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold text-netcrab-text">My Packs</h1>
@@ -214,7 +213,7 @@ export default function MyPacksPage() {
           <ApiKeyManager />
         </div>
       </div>
-    </Layout>
+
   );
 }
 

@@ -1,6 +1,5 @@
 'use client';
 
-import Layout from '@/components/Layout';
 import { api, type Flow } from '@/lib/api';
 import { useEffect, useState } from 'react';
 
@@ -28,27 +27,22 @@ export default function FlowsPage() {
 
   if (loading) {
     return (
-      <Layout>
-        <div className="flex items-center justify-center h-64">
-          <div className="text-netcrab-muted">Loading flows...</div>
-        </div>
-      </Layout>
+      <div className="flex items-center justify-center h-64">
+        <div className="text-netcrab-muted">Loading flows...</div>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <Layout>
-        <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4 text-netcrab-crab">
-          Error: {error}
-        </div>
-      </Layout>
+      <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4 text-netcrab-crab">
+        Error: {error}
+      </div>
     );
   }
 
   return (
-    <Layout>
-      <div className="space-y-6">
+    <div className="space-y-6">
         <h1 className="text-3xl font-bold text-netcrab-text">Flows</h1>
 
         <div className="grid grid-cols-1 gap-4">
@@ -153,7 +147,6 @@ export default function FlowsPage() {
           </div>
         )}
       </div>
-    </Layout>
   );
 }
 

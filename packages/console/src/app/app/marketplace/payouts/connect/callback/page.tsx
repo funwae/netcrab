@@ -2,7 +2,6 @@
 
 import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Layout from '@/components/Layout';
 import Link from 'next/link';
 
 function ConnectCallbackContent() {
@@ -33,7 +32,7 @@ function ConnectCallbackContent() {
   }, [searchParams]);
 
   return (
-    <Layout>
+
       <div className="max-w-2xl mx-auto py-12">
         {status === 'loading' && (
           <div className="text-center">
@@ -74,19 +73,19 @@ function ConnectCallbackContent() {
           </div>
         )}
       </div>
-    </Layout>
+
   );
 }
 
 export default function ConnectCallbackPage() {
   return (
     <Suspense fallback={
-      <Layout>
+
         <div className="max-w-2xl mx-auto py-12 text-center">
           <div className="text-4xl mb-4">🦀</div>
           <p className="text-navy-600">Loading...</p>
         </div>
-      </Layout>
+
     }>
       <ConnectCallbackContent />
     </Suspense>

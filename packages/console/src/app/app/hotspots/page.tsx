@@ -1,6 +1,5 @@
 'use client';
 
-import Layout from '@/components/Layout';
 import { api, type HotspotDetail } from '@/lib/api';
 import { useEffect, useState } from 'react';
 
@@ -28,26 +27,26 @@ export default function HotspotsPage() {
 
   if (loading) {
     return (
-      <Layout>
+
         <div className="flex items-center justify-center h-64">
           <div className="text-netcrab-muted">Loading hotspots...</div>
         </div>
-      </Layout>
+
     );
   }
 
   if (error) {
     return (
-      <Layout>
+
         <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4 text-netcrab-crab">
           Error: {error}
         </div>
-      </Layout>
+
     );
   }
 
   return (
-    <Layout>
+
       <div className="space-y-6">
         <h1 className="text-3xl font-bold text-netcrab-text">Hotspots</h1>
 
@@ -162,7 +161,7 @@ export default function HotspotsPage() {
           </div>
         )}
       </div>
-    </Layout>
+
   );
 }
 
