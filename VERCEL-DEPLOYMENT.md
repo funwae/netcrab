@@ -1,45 +1,59 @@
 # Vercel Deployment Guide
 
-## Quick Setup
+## ⚠️ IMPORTANT: Root Directory Setting
 
-1. **Connect Repository to Vercel**
+For this monorepo, you have **two options**. Choose **Option 1** (recommended):
+
+### Option 1: Set Root Directory in Vercel Dashboard (RECOMMENDED)
+
+1. **Import Repository**
    - Go to [vercel.com](https://vercel.com)
    - Import repository: `https://github.com/funwae/netcrab.git`
-   - Vercel will auto-detect Next.js
 
-2. **Configure Project Settings**
-   - **Root Directory**: Leave as root (`.`)
-   - **Framework Preset**: Next.js (auto-detected)
-   - **Build Command**: `cd packages/console && pnpm build` (already in vercel.json)
-   - **Output Directory**: `packages/console/.next` (already in vercel.json)
-   - **Install Command**: `pnpm install` (already in vercel.json)
+2. **Set Root Directory**
+   - Go to **Settings** → **General**
+   - Scroll to **Root Directory**
+   - Click **Edit**
+   - Set to: `packages/console`
+   - Click **Save**
 
-3. **Set Environment Variables**
-   In Vercel Dashboard → Project Settings → Environment Variables:
+3. **Build Settings** (should auto-detect)
+   - Framework Preset: **Next.js** (auto-detected)
+   - Build Command: `pnpm build` (or leave empty for auto)
+   - Output Directory: `.next` (or leave empty for auto)
+   - Install Command: `pnpm install` (or leave empty for auto)
 
+4. **Set Environment Variables**
+   In **Settings** → **Environment Variables**:
+   
    ```
    NEXT_PUBLIC_ENV=demo
    NETCRAB_DEMO_MODE=true
    ```
+   
+   Set for: Production, Preview, Development
 
-   Make sure to set these for:
-   - ✅ Production
-   - ✅ Preview
-   - ✅ Development
+5. **Deploy**
+   - Click **Deploy**
+   - Vercel will build from `packages/console` directory
 
-4. **Deploy**
-   - Click "Deploy"
-   - Vercel will automatically build and deploy
+### Option 2: Use Root Directory (Alternative)
 
-## Configuration Details
+If you want to keep root directory as `.` (repo root):
 
-The `vercel.json` file includes:
+1. **Root Directory**: Leave as `.` (default)
+2. **Build Command**: `pnpm --filter '@netcrab/console' build`
+3. **Output Directory**: `packages/console/.next`
+4. **Install Command**: `pnpm install`
+5. **Framework**: Next.js
 
-- **Monorepo Support**: Builds from `packages/console` directory
-- **pnpm Workspace**: Uses `pnpm install` for dependency management
-- **Security Headers**: XSS protection, frame options, content type options
-- **Caching**: Optimized cache headers for static assets
-- **Region**: Deploys to `iad1` (US East)
+The `vercel.json` file in the repo root will handle this configuration.
+
+## Recommended Configuration
+
+**Use Option 1** - Set Root Directory to `packages/console` in Vercel Dashboard.
+
+This is simpler and lets Vercel auto-detect everything. The `vercel.json` at repo root will be ignored when root directory is set to a subdirectory.
 
 ## Environment Variables
 
@@ -70,12 +84,14 @@ The `vercel.json` file includes:
 ### Build Fails
 
 - **Error: "Cannot find module"**
-  - Ensure `pnpm install` runs at root
+  - Ensure Root Directory is set to `packages/console`
+  - Verify `pnpm install` runs correctly
   - Check that `packageManager` is set in root `package.json`
 
 - **Error: "Build command failed"**
   - Verify Node.js version (requires >=18.0.0)
   - Check that pnpm is available (Vercel auto-installs)
+  - Ensure Root Directory is correctly set
 
 ### Environment Variables Not Working
 
@@ -99,4 +115,3 @@ For issues, check:
 - [Vercel Documentation](https://vercel.com/docs)
 - [Next.js Deployment](https://nextjs.org/docs/deployment)
 - [Monorepo Guide](https://vercel.com/docs/monorepos)
-
