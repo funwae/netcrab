@@ -25,12 +25,12 @@ For this monorepo, you have **two options**. Choose **Option 1** (recommended):
 
 4. **Set Environment Variables**
    In **Settings** → **Environment Variables**:
-   
+
    ```
    NEXT_PUBLIC_ENV=demo
    NETCRAB_DEMO_MODE=true
    ```
-   
+
    Set for: Production, Preview, Development
 
 5. **Deploy**
@@ -53,7 +53,9 @@ The `vercel.json` file in the repo root will handle this configuration.
 
 **Use Option 1** - Set Root Directory to `packages/console` in Vercel Dashboard.
 
-This is simpler and lets Vercel auto-detect everything. The `vercel.json` at repo root will be ignored when root directory is set to a subdirectory.
+This is simpler and lets Vercel auto-detect everything. When root directory is set to `packages/console`, Vercel will use the `vercel.json` file inside `packages/console/` (which we've created for you).
+
+**Important**: When using Option 1, do NOT set Output Directory in Vercel Dashboard - leave it empty so Vercel auto-detects `.next` relative to the root directory.
 
 ## Environment Variables
 
