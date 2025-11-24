@@ -25,12 +25,12 @@
 
 4. **Environment Variables**
    In **Settings** → **Environment Variables**:
-   
+
    ```
    NEXT_PUBLIC_ENV=demo
    NETCRAB_DEMO_MODE=true
    ```
-   
+
    Set for: ✅ Production, ✅ Preview, ✅ Development
 
 5. **Deploy**
@@ -65,7 +65,7 @@ The build has been tested locally and works correctly:
 
 **Cause**: Output Directory is set incorrectly in Vercel Dashboard
 
-**Fix**: 
+**Fix**:
 1. Go to Settings → General → Build & Development Settings
 2. **Clear** the Output Directory field (leave it empty)
 3. Redeploy
