@@ -5,6 +5,8 @@ import { useSearchParams } from 'next/navigation';
 import Layout from '@/components/Layout';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 export default function ConnectCallbackPage() {
   const searchParams = useSearchParams();
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
