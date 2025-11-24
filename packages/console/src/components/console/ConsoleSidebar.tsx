@@ -23,7 +23,7 @@ export default function ConsoleSidebar() {
           <img
             src="/netcrab-logo.svg"
             alt="NetCrab"
-            className="h-8 w-8"
+            className="h-9 w-9"
           />
           <div>
             <h1 className="text-lg font-bold text-netcrab-text">NetCrab</h1>
