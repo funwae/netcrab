@@ -31,7 +31,7 @@ export default function ConsoleSidebar() {
           </div>
         </div>
         <div className="mt-2">
-          <span className="px-2 py-1 bg-netcrab-aqua/20 text-netcrab-aqua text-xs rounded">Demo Mode</span>
+          <span className="px-2 py-1 bg-netcrab-shell/20 text-netcrab-shell text-xs rounded border border-netcrab-shell/30">Demo Mode</span>
         </div>
       </div>
       <nav className="flex-1 p-4">

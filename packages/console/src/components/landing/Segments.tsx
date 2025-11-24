@@ -1,53 +1,56 @@
 export default function Segments() {
   return (
-    <section className="bg-netcrab-ink py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-netcrab-card rounded-lg p-8 border border-netcrab-surface hover:border-netcrab-crab/30 transition-colors">
-            <h3 className="text-2xl font-bold mb-4 text-netcrab-text">For Product Teams</h3>
-            <p className="text-netcrab-muted mb-4 leading-relaxed">
-              Find and fix friction fast. NetCrab surfaces where users struggle, which flows break, and what's causing rage clicks—all without surveys or guesswork.
+    <section className="bg-netcrab-ink py-16 md:py-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Product Teams Card */}
+          <div className="bg-netcrab-surface rounded-lg border border-netcrab-border p-8 hover:border-netcrab-shell/30 transition-colors">
+            <h3 className="text-2xl font-bold text-netcrab-text mb-4">For Product Teams</h3>
+            <p className="text-netcrab-muted mb-6 leading-relaxed">
+              Understand how users actually interact with your product. Find friction points, abandoned flows, and rage-click patterns before they become support tickets.
             </p>
-            <ul className="space-y-2 text-netcrab-muted">
-              <li className="flex items-start gap-2">
-                <span className="text-netcrab-aqua mt-1">✓</span>
-                <span>Real-time friction detection</span>
+            <ul className="space-y-3 text-netcrab-text">
+              <li className="flex items-start gap-3">
+                <span className="text-netcrab-shell mt-1">✓</span>
+                <span>Real-time friction and efficiency scores</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-netcrab-aqua mt-1">✓</span>
-                <span>Flow visualization and analysis</span>
+              <li className="flex items-start gap-3">
+                <span className="text-netcrab-shell mt-1">✓</span>
+                <span>AI-powered Crab Notes highlight actionable insights</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-netcrab-aqua mt-1">✓</span>
-                <span>AI-generated insights (Crab Notes)</span>
+              <li className="flex items-start gap-3">
+                <span className="text-netcrab-shell mt-1">✓</span>
+                <span>Flow analysis shows where users drop off</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-netcrab-aqua mt-1">✓</span>
-                <span>Version comparison and A/B testing</span>
+              <li className="flex items-start gap-3">
+                <span className="text-netcrab-shell mt-1">✓</span>
+                <span>Hotspot detection identifies problem screens</span>
               </li>
             </ul>
           </div>
-          <div className="bg-netcrab-card rounded-lg p-8 border border-netcrab-surface hover:border-netcrab-aqua/30 transition-colors">
-            <h3 className="text-2xl font-bold mb-4 text-netcrab-text">For Data Buyers</h3>
-            <p className="text-netcrab-muted mb-4 leading-relaxed">
-              Benchmark your UX against the market. Access anonymized, aggregated benchmarks from hundreds of products to see how you stack up.
+
+          {/* Data Buyers Card */}
+          <div className="bg-netcrab-surface rounded-lg border border-netcrab-border p-8 hover:border-netcrab-shell/30 transition-colors">
+            <h3 className="text-2xl font-bold text-netcrab-text mb-4">For Data Buyers</h3>
+            <p className="text-netcrab-muted mb-6 leading-relaxed">
+              Access anonymized, aggregated behavioral benchmarks from hundreds of products in your vertical. Compare your UX metrics against industry standards.
             </p>
-            <ul className="space-y-2 text-netcrab-muted">
-              <li className="flex items-start gap-2">
-                <span className="text-netcrab-crab mt-1">✓</span>
-                <span>Industry-wide UX benchmarks</span>
+            <ul className="space-y-3 text-netcrab-text">
+              <li className="flex items-start gap-3">
+                <span className="text-netcrab-shell mt-1">✓</span>
+                <span>Vertical-specific UX benchmark packs</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-netcrab-crab mt-1">✓</span>
-                <span>Task flow archetypes</span>
+              <li className="flex items-start gap-3">
+                <span className="text-netcrab-shell mt-1">✓</span>
+                <span>Task-flow archetype libraries</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-netcrab-crab mt-1">✓</span>
-                <span>Release delta analysis</span>
+              <li className="flex items-start gap-3">
+                <span className="text-netcrab-shell mt-1">✓</span>
+                <span>Release delta and trend analysis</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-netcrab-crab mt-1">✓</span>
-                <span>API access and downloads</span>
+              <li className="flex items-start gap-3">
+                <span className="text-netcrab-shell mt-1">✓</span>
+                <span>API access for BI tools and dashboards</span>
               </li>
             </ul>
           </div>
@@ -56,4 +59,3 @@ export default function Segments() {
     </section>
   );
 }
-

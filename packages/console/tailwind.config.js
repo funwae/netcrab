@@ -10,12 +10,14 @@ module.exports = {
       colors: {
         netcrab: {
           ink: '#020617',
-          surface: '#0f172a',
+          surface: '#0b1220',
           crab: '#fb7185',
-          aqua: '#22d3ee',
-          text: '#e2e8f0',
-          muted: '#94a3b8',
+          aqua: '#22d3ee', // Keep for backward compatibility
+          shell: '#22d3ee', // Alias for aqua
+          text: '#e5e7eb',
+          muted: '#9ca3af',
           card: '#1f2937',
+          border: '#1f2933',
         },
         // Keep existing colors for backward compatibility
         navy: {

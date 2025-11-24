@@ -1,42 +1,42 @@
 export default function HowItWorks() {
   const steps = [
     {
-      icon: '📊',
+      icon: '📡',
       title: 'Collect',
-      description: 'On-premise agent captures behavioral events—clicks, scrolls, navigation—anonymized and secure.',
+      description: 'NetCrab agent sits quietly in your network, capturing behavioral events without touching PII.',
     },
     {
       icon: '🧠',
       title: 'Understand',
-      description: 'AI-powered insights surface friction points, flow patterns, and efficiency scores automatically.',
+      description: 'AI-powered clustering and pattern detection turn raw clicks into actionable insights about user frustration and efficiency.',
     },
     {
-      icon: '⚡',
+      icon: '🔧',
       title: 'Improve',
-      description: 'Actionable Crab Notes and hotspot analysis help you fix what\'s broken, fast.',
+      description: 'Crab Notes highlight friction hotspots, abandoned flows, and rage-click patterns so you can fix what matters.',
     },
     {
       icon: '💰',
       title: 'Share & Earn',
-      description: 'Opt-in to contribute anonymized patterns to benchmark packs and earn revenue shares.',
+      description: 'Opt into anonymized benchmark packs and earn revenue when other teams buy aggregated insights from your vertical.',
     },
   ];
 
   return (
-    <section id="how-it-works" className="bg-netcrab-surface py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-12 text-netcrab-text">How It Works</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="bg-netcrab-surface py-16 md:py-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-netcrab-text mb-12 text-center">
+          How NetCrab Works
+        </h2>
+        <div className="grid gap-6 md:grid-cols-4">
           {steps.map((step, index) => (
             <div
-              key={step.title}
-              className="bg-netcrab-card rounded-lg p-6 border border-netcrab-surface hover:border-netcrab-aqua/30 transition-colors"
+              key={index}
+              className="bg-netcrab-card rounded-lg border border-netcrab-border p-6 hover:border-netcrab-shell/30 transition-colors"
             >
-              <div className="w-16 h-16 bg-netcrab-crab/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">{step.icon}</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-netcrab-text text-center">{step.title}</h3>
-              <p className="text-netcrab-muted text-center">{step.description}</p>
+              <div className="text-4xl mb-4">{step.icon}</div>
+              <h3 className="text-xl font-semibold text-netcrab-text mb-3">{step.title}</h3>
+              <p className="text-netcrab-muted leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>
@@ -44,4 +44,3 @@ export default function HowItWorks() {
     </section>
   );
 }
-
