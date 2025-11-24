@@ -16,12 +16,12 @@
 
 3. **Set Environment Variables**
    In Vercel Dashboard → Project Settings → Environment Variables:
-   
+
    ```
    NEXT_PUBLIC_ENV=demo
    NETCRAB_DEMO_MODE=true
    ```
-   
+
    Make sure to set these for:
    - ✅ Production
    - ✅ Preview

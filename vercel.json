@@ -1,10 +1,8 @@
 {
-  "version": 2,
-  "buildCommand": "cd packages/console && pnpm build",
+  "buildCommand": "pnpm --filter '@netcrab/console' build",
   "installCommand": "pnpm install",
-  "framework": "nextjs",
   "outputDirectory": "packages/console/.next",
-  "devCommand": "cd packages/console && pnpm dev",
+  "framework": "nextjs",
   "rewrites": [
     {
       "source": "/(.*)",
@@ -51,7 +49,5 @@
         }
       ]
     }
-  ],
-  "regions": ["iad1"]
+  ]
 }
-
