@@ -19,7 +19,7 @@ export default function ConsoleSidebar() {
   return (
     <aside className="w-64 bg-netcrab-surface border-r border-netcrab-card min-h-screen flex flex-col">
       <div className="p-6 border-b border-netcrab-card">
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center gap-3">
           <img
             src="/netcrab-logo.svg"
             alt="NetCrab"
@@ -29,9 +29,6 @@ export default function ConsoleSidebar() {
             <h1 className="text-lg font-bold text-netcrab-text">NetCrab</h1>
             <p className="text-xs text-netcrab-muted">Console</p>
           </div>
-        </div>
-        <div className="mt-2">
-          <span className="px-2 py-1 bg-netcrab-aqua/20 text-netcrab-aqua text-xs rounded">Demo Mode</span>
         </div>
       </div>
       <nav className="flex-1 p-4">
