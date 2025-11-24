@@ -30,10 +30,10 @@ export default function Hero() {
                 View Live Demo
               </Link>
               <Link
-                href="/marketplace"
+                href="/pricing"
                 className="px-8 py-4 bg-transparent border border-netcrab-border text-netcrab-text rounded-lg font-semibold hover:bg-netcrab-surface transition-colors text-lg text-center"
               >
-                Explore the Marketplace
+                View Pricing
               </Link>
             </div>
             <div className="flex items-center gap-2 text-sm text-netcrab-muted">

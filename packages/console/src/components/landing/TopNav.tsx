@@ -24,6 +24,9 @@ export default function TopNav() {
             <Link href="/docs" className="text-netcrab-muted hover:text-netcrab-text transition-colors">
               Docs
             </Link>
+            <Link href="/pricing" className="text-netcrab-muted hover:text-netcrab-text transition-colors">
+              Pricing
+            </Link>
             <Link
               href="/app"
               className="px-4 py-2 bg-netcrab-crab text-white rounded-lg hover:bg-netcrab-crab/90 transition-colors font-medium"
