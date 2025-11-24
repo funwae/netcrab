@@ -2,57 +2,51 @@
 
 import Layout from '@/components/Layout';
 
-export default function MarketplacePage() {
+export default function SellerMarketplacePage() {
   return (
     <Layout>
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold text-navy-900">Marketplace</h1>
+        <div>
+          <h1 className="text-3xl font-bold text-netcrab-text">Marketplace</h1>
+          <p className="text-netcrab-muted mt-1">Your contributions and revenue</p>
+        </div>
 
-        <div className="bg-white rounded-lg shadow border border-navy-200 p-6">
-          <h2 className="text-xl font-semibold text-navy-900 mb-4">Your Contributions</h2>
+        <div className="bg-netcrab-card rounded-lg border border-netcrab-surface p-6">
+          <h2 className="text-xl font-semibold text-netcrab-text mb-4">This Month's Projected Revenue</h2>
+          <div className="text-4xl font-bold text-netcrab-crab mb-2">$2,450.32</div>
+          <p className="text-netcrab-muted">Based on current pack contributions</p>
+        </div>
+
+        <div className="bg-netcrab-card rounded-lg border border-netcrab-surface p-6">
+          <h2 className="text-xl font-semibold text-netcrab-text mb-4">Your Contributions</h2>
           <div className="space-y-4">
-            <div className="border border-navy-200 rounded-lg p-4">
+            <div className="border border-netcrab-surface rounded-lg p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="font-medium text-navy-900">UX Friction Benchmarks - B2B CRM</div>
-                  <div className="text-sm text-navy-600">Last month: $0.00 revenue</div>
+                  <div className="font-medium text-netcrab-text">UX Friction Benchmarks - B2B CRM</div>
+                  <div className="text-sm text-netcrab-muted">Last month: $1,820.11 revenue</div>
                 </div>
-                <div className="text-sm text-navy-600">12,450 sessions contributed</div>
+                <div className="text-right">
+                  <div className="text-sm text-netcrab-muted">182,340 sessions</div>
+                  <div className="text-xs text-netcrab-muted">18% contribution</div>
+                </div>
+              </div>
+            </div>
+            <div className="border border-netcrab-surface rounded-lg p-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-medium text-netcrab-text">Support Desk Flows v1</div>
+                  <div className="text-sm text-netcrab-muted">Last month: $630.21 revenue</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-sm text-netcrab-muted">77,902 sessions</div>
+                  <div className="text-xs text-netcrab-muted">12% contribution</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="bg-navy-50 rounded-lg border border-navy-200 p-6">
-          <h3 className="text-lg font-semibold text-navy-900 mb-2">Marketplace Participation</h3>
-          <p className="text-navy-700 mb-4">
-            Opt in to privacy-safe, cross-industry benchmark packs. Your anonymous patterns join
-            others to create valuable data—and you get paid your share.
-          </p>
-          <div className="space-y-2">
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span className="text-navy-700">Enable marketplace participation</span>
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span className="text-navy-700">Include billing flow data</span>
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span className="text-navy-700">Include admin panel data</span>
-            </label>
-          </div>
-        </div>
-
-        <div className="text-sm text-navy-600">
-          <p>
-            Marketplace features will be available in Phase 3. Your data is currently only used
-            for internal analytics.
-          </p>
         </div>
       </div>
     </Layout>
   );
 }
-

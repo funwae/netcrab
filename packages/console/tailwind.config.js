@@ -8,6 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        netcrab: {
+          ink: '#020617',
+          surface: '#0f172a',
+          crab: '#fb7185',
+          aqua: '#22d3ee',
+          text: '#e2e8f0',
+          muted: '#94a3b8',
+          card: '#1f2937',
+        },
+        // Keep existing colors for backward compatibility
         navy: {
           50: '#f0f4f8',
           100: '#d9e2ec',
