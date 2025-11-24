@@ -1,0 +1,31 @@
+{
+  "name": "@netcrab/ai-services",
+  "version": "0.1.0",
+  "description": "NetCrab AI/ML services for clustering and LLM insights",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "lint": "eslint src"
+  },
+  "keywords": [
+    "ml",
+    "ai",
+    "clustering",
+    "llm"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@clickhouse/client": "^0.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "tsup": "^8.0.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  }
+}
+

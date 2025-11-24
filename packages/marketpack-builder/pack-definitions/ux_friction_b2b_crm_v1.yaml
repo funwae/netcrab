@@ -1,0 +1,25 @@
+packId: ux_friction_b2b_crm_v1
+kind: ux_benchmarks
+title: "B2B CRM UX Friction Benchmarks v1"
+vertical: "B2B_CRM"
+description: >
+  Aggregated friction and efficiency scores for common B2B CRM workflows.
+  Includes median clicks, duration, friction scores, and efficiency scores
+  for common task types like lead creation, contact management, and deal tracking.
+table: mp_ux_friction_daily
+fields:
+  - date
+  - task_type
+  - flow_complexity
+  - median_clicks
+  - median_duration_s
+  - mean_frict_score
+  - p90_frict_score
+  - sample_sessions
+  - org_count
+updateFrequency: daily
+minOrgs: 20
+minSessions: 10000
+retentionDays: 365
+public: true
+

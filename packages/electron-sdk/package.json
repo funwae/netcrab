@@ -1,0 +1,20 @@
+{
+  "name": "@netcrab/electron",
+  "version": "0.1.0",
+  "description": "NetCrab Electron/desktop SDK wrapper",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "lint": "eslint src"
+  },
+  "keywords": [
+    "analytics",
+    "electron",
+    "desktop"
+  ],
+  "license": "MIT"
+}
+

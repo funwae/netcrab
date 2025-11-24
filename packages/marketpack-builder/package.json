@@ -1,0 +1,24 @@
+{
+  "name": "@netcrab/marketpack-builder",
+  "version": "0.1.0",
+  "description": "NetCrab marketplace pack builder service",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@clickhouse/client": "^0.2.5",
+    "js-yaml": "^4.1.0",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.10.6",
+    "@types/node-cron": "^3.0.11",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}

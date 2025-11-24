@@ -1,0 +1,26 @@
+packId: flows_support_ticketing_v1
+kind: task_flows
+title: "Support Desk Task Flows v1"
+vertical: "SUPPORT_DESK"
+description: >
+  Common user journey patterns for support ticket workflows.
+  Includes ticket creation, assignment, resolution, and escalation flows
+  with completion rates and friction metrics.
+table: mp_task_flows
+fields:
+  - date_window
+  - vertical
+  - task_type
+  - archetype_id
+  - archetype_label
+  - steps
+  - avg_duration_s
+  - avg_frict_score
+  - sample_sessions
+  - org_count
+updateFrequency: daily
+minOrgs: 20
+minSessions: 10000
+retentionDays: 365
+public: true
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetCrab Web SDK Example</title>
+</head>
+<body>
+  <h1>NetCrab Web SDK Example</h1>
+
+  <div>
+    <button id="test-click">Test Click Event</button>
+    <button id="test-task">Test Task Tracking</button>
+    <button id="test-custom">Test Custom Event</button>
+  </div>
+
+  <div style="height: 2000px; margin-top: 20px;">
+    <p>Scroll down to test scroll events</p>
+  </div>
+
+  <script type="module">
+    // Import the SDK (in production, use npm package)
+    // import { initNetCrab, trackEvent, startTask, completeTask } from '@netcrab/web';
+
+    // For this example, we'll assume the SDK is built and available
+    // In a real scenario, you would:
+    // 1. npm install @netcrab/web
+    // 2. import { initNetCrab } from '@netcrab/web';
+
+    // Initialize NetCrab
+    // initNetCrab({
+    //   orgId: 'example-org',
+    //   productId: 'example-product',
+    //   agentUrl: 'http://localhost:7000',
+    //   debug: true
+    // });
+
+    // Example event handlers
+    document.getElementById('test-click')?.addEventListener('click', () => {
+      console.log('Click event captured');
+    });
+
+    document.getElementById('test-task')?.addEventListener('click', async () => {
+      // await startTask('checkout');
+      // ... do checkout ...
+      // await completeTask('checkout');
+      console.log('Task tracking example');
+    });
+
+    document.getElementById('test-custom')?.addEventListener('click', async () => {
+      // await trackEvent('button_clicked', { button_id: 'test-custom' });
+      console.log('Custom event example');
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+{
+  "name": "@netcrab/web",
+  "version": "0.1.0",
+  "description": "NetCrab browser JavaScript SDK",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "lint": "eslint src"
+  },
+  "keywords": [
+    "analytics",
+    "behavioral-tracking",
+    "ux-analytics"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  }
+}
+

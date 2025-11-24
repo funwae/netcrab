@@ -1,0 +1,25 @@
+{
+  "name": "@netcrab/marketplace-api",
+  "version": "0.1.0",
+  "description": "NetCrab marketplace API for buyers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@clickhouse/client": "^0.2.5",
+    "fastify": "^4.24.3",
+    "bcrypt": "^5.1.1",
+    "csv-writer": "^1.6.0",
+    "stripe": "^14.7.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^20.10.6",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
