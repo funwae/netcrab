@@ -68,11 +68,11 @@ export default function OptInPage() {
     return (
       <Layout>
         <div className="space-y-6">
-          <div className="h-8 bg-navy-200 rounded w-1/3 animate-pulse"></div>
-          <div className="bg-white rounded-lg shadow border border-navy-200 p-6">
+          <div className="h-8 bg-netcrab-surface rounded w-1/3 animate-pulse"></div>
+          <div className="bg-netcrab-card rounded-lg border border-netcrab-surface p-6">
             <div className="space-y-4">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="h-12 bg-navy-200 rounded animate-pulse"></div>
+                <div key={i} className="h-12 bg-netcrab-surface rounded animate-pulse"></div>
               ))}
             </div>
           </div>
@@ -84,8 +84,8 @@ export default function OptInPage() {
   if (error && !settings) {
     return (
       <Layout>
-        <div className="bg-coral-50 border border-coral-200 rounded-lg p-4">
-          <p className="text-coral-800">{error}</p>
+        <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4">
+          <p className="text-netcrab-crab">{error}</p>
         </div>
       </Layout>
     );
@@ -97,30 +97,30 @@ export default function OptInPage() {
     <Layout>
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold text-navy-900">Data Sharing & Marketplace Participation</h1>
-          <p className="text-navy-600 mt-1">
+          <h1 className="text-3xl font-bold text-netcrab-text">Data Sharing & Marketplace Participation</h1>
+          <p className="text-netcrab-muted mt-1">
             Control which of your anonymized patterns help train benchmarks—and earn revenue.
           </p>
         </div>
 
         {saveSuccess && (
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-green-800">
+          <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-4 text-green-400">
             Settings saved successfully!
           </div>
         )}
 
         {error && (
-          <div className="bg-coral-50 border border-coral-200 rounded-lg p-4 text-coral-800">
+          <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4 text-netcrab-crab">
             {error}
           </div>
         )}
 
         {/* Global Toggle */}
-        <div className="bg-white rounded-lg shadow border border-navy-200 p-6">
+        <div className="bg-netcrab-card rounded-lg border border-netcrab-surface p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-lg font-semibold text-navy-900">Participate in NetCrab Marketplace</h2>
-              <p className="text-sm text-navy-600 mt-1">
+              <h2 className="text-lg font-semibold text-netcrab-text">Participate in NetCrab Marketplace</h2>
+              <p className="text-sm text-netcrab-muted mt-1">
                 NetCrab never shares PII or identifiers. Only aggregated patterns like 'median clicks to complete checkout'.
               </p>
             </div>
@@ -131,30 +131,30 @@ export default function OptInPage() {
                 onChange={(e) => handleGlobalToggle(e.target.checked)}
                 className="sr-only peer"
               />
-              <div className="w-11 h-6 bg-navy-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-coral-500"></div>
+              <div className="w-11 h-6 bg-netcrab-surface peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-netcrab-crab"></div>
             </label>
           </div>
         </div>
 
         {/* Per-Product Table */}
-        <div className="bg-white rounded-lg shadow border border-navy-200">
-          <div className="p-6 border-b border-navy-200">
-            <h2 className="text-lg font-semibold text-navy-900">Per-Product Settings</h2>
+        <div className="bg-netcrab-card rounded-lg border border-netcrab-surface">
+          <div className="p-6 border-b border-netcrab-surface">
+            <h2 className="text-lg font-semibold text-netcrab-text">Per-Product Settings</h2>
           </div>
           <div className="p-6">
             <table className="min-w-full">
               <thead>
-                <tr className="border-b border-navy-200">
-                  <th className="text-left py-3 px-4 font-medium text-navy-700">Product</th>
-                  <th className="text-left py-3 px-4 font-medium text-navy-700">Vertical</th>
-                  <th className="text-left py-3 px-4 font-medium text-navy-700">Packs</th>
+                <tr className="border-b border-netcrab-surface">
+                  <th className="text-left py-3 px-4 font-medium text-netcrab-text">Product</th>
+                  <th className="text-left py-3 px-4 font-medium text-netcrab-text">Vertical</th>
+                  <th className="text-left py-3 px-4 font-medium text-netcrab-text">Packs</th>
                 </tr>
               </thead>
               <tbody>
                 {settings.products.map((product) => (
-                  <tr key={product.productId} className="border-b border-navy-100">
-                    <td className="py-3 px-4 text-navy-900">{product.productName}</td>
-                    <td className="py-3 px-4 text-navy-600">{product.vertical}</td>
+                  <tr key={product.productId} className="border-b border-netcrab-surface/50">
+                    <td className="py-3 px-4 text-netcrab-text">{product.productName}</td>
+                    <td className="py-3 px-4 text-netcrab-muted">{product.vertical}</td>
                     <td className="py-3 px-4">
                       <div className="space-y-2">
                         {product.packs.map((pack) => (
@@ -168,9 +168,9 @@ export default function OptInPage() {
                               checked={pack.optIn && settings.globalOptIn}
                               onChange={(e) => handlePackToggle(product.productId, pack.packId, e.target.checked)}
                               disabled={!settings.globalOptIn}
-                              className="rounded border-navy-300"
+                              className="rounded border-netcrab-surface"
                             />
-                            <span className={`text-sm ${!settings.globalOptIn ? 'text-navy-400' : 'text-navy-700'}`}>
+                            <span className={`text-sm ${!settings.globalOptIn ? 'text-netcrab-muted/50' : 'text-netcrab-muted'}`}>
                               {pack.title}
                             </span>
                           </label>
@@ -189,7 +189,7 @@ export default function OptInPage() {
           <button
             onClick={handleSave}
             disabled={saving}
-            className="px-6 py-2 bg-coral-500 text-white rounded hover:bg-coral-600 disabled:opacity-50"
+            className="px-6 py-2 bg-netcrab-crab text-white rounded hover:bg-netcrab-crab/90 disabled:opacity-50"
           >
             {saving ? 'Saving...' : 'Save Settings'}
           </button>

@@ -30,7 +30,7 @@ export default function FlowsPage() {
     return (
       <Layout>
         <div className="flex items-center justify-center h-64">
-          <div className="text-navy-600">Loading flows...</div>
+          <div className="text-netcrab-muted">Loading flows...</div>
         </div>
       </Layout>
     );
@@ -39,7 +39,7 @@ export default function FlowsPage() {
   if (error) {
     return (
       <Layout>
-        <div className="bg-coral-50 border border-coral-200 rounded-lg p-4 text-coral-800">
+        <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4 text-netcrab-crab">
           Error: {error}
         </div>
       </Layout>
@@ -49,29 +49,29 @@ export default function FlowsPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold text-navy-900">Flows</h1>
+        <h1 className="text-3xl font-bold text-netcrab-text">Flows</h1>
 
         <div className="grid grid-cols-1 gap-4">
           {flows.map((flow) => (
             <div
               key={flow.id}
-              className="bg-white rounded-lg shadow border border-navy-200 p-6 hover:shadow-lg transition-shadow cursor-pointer"
+              className="bg-netcrab-card rounded-lg border border-netcrab-surface p-6 hover:border-netcrab-aqua/30 transition-colors cursor-pointer"
               onClick={() => setSelectedFlow(flow)}
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-navy-900">{flow.label}</h3>
-                <span className="text-sm text-navy-600">{flow.sessions.toLocaleString()} sessions</span>
+                <h3 className="text-lg font-semibold text-netcrab-text">{flow.label}</h3>
+                <span className="text-sm text-netcrab-muted">{flow.sessions.toLocaleString()} sessions</span>
               </div>
 
               {/* Flow Path Visualization */}
               <div className="flex items-center space-x-2 mb-4">
                 {flow.path.map((screen, index) => (
                   <div key={index} className="flex items-center">
-                    <div className="px-3 py-1 bg-navy-100 text-navy-700 rounded text-sm font-medium">
+                    <div className="px-3 py-1 bg-netcrab-surface text-netcrab-text rounded text-sm font-medium">
                       {screen}
                     </div>
                     {index < flow.path.length - 1 && (
-                      <span className="mx-2 text-navy-400">→</span>
+                      <span className="mx-2 text-netcrab-muted">→</span>
                     )}
                   </div>
                 ))}
@@ -79,18 +79,18 @@ export default function FlowsPage() {
 
               <div className="grid grid-cols-3 gap-4 text-sm">
                 <div>
-                  <div className="text-navy-600">Completion Rate</div>
-                  <div className="font-semibold text-navy-900">
+                  <div className="text-netcrab-muted">Completion Rate</div>
+                  <div className="font-semibold text-netcrab-text">
                     {(flow.completionRate * 100).toFixed(1)}%
                   </div>
                 </div>
                 <div>
-                  <div className="text-navy-600">Avg Friction</div>
-                  <div className="font-semibold text-navy-900">{flow.avgFriction.toFixed(2)}</div>
+                  <div className="text-netcrab-muted">Avg Friction</div>
+                  <div className="font-semibold text-netcrab-text">{flow.avgFriction.toFixed(2)}</div>
                 </div>
                 <div>
-                  <div className="text-navy-600">Avg Duration</div>
-                  <div className="font-semibold text-navy-900">{flow.avgDurationSec}s</div>
+                  <div className="text-netcrab-muted">Avg Duration</div>
+                  <div className="font-semibold text-netcrab-text">{flow.avgDurationSec}s</div>
                 </div>
               </div>
             </div>
@@ -99,27 +99,27 @@ export default function FlowsPage() {
 
         {/* Detail Panel */}
         {selectedFlow && (
-          <div className="bg-white rounded-lg shadow border border-navy-200 p-6">
+          <div className="bg-netcrab-card rounded-lg border border-netcrab-surface p-6">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-navy-900">{selectedFlow.label}</h2>
+              <h2 className="text-xl font-semibold text-netcrab-text">{selectedFlow.label}</h2>
               <button
                 onClick={() => setSelectedFlow(null)}
-                className="text-navy-500 hover:text-navy-700"
+                className="text-netcrab-muted hover:text-netcrab-text"
               >
                 ✕
               </button>
             </div>
             <div className="space-y-4">
               <div>
-                <div className="text-sm text-navy-600 mb-2">Flow Path</div>
+                <div className="text-sm text-netcrab-muted mb-2">Flow Path</div>
                 <div className="flex items-center space-x-2">
                   {selectedFlow.path.map((screen, index) => (
                     <div key={index} className="flex items-center">
-                      <div className="px-4 py-2 bg-navy-100 text-navy-700 rounded font-medium">
+                      <div className="px-4 py-2 bg-netcrab-surface text-netcrab-text rounded font-medium">
                         {screen}
                       </div>
                       {index < selectedFlow.path.length - 1 && (
-                        <span className="mx-2 text-navy-400 text-xl">→</span>
+                        <span className="mx-2 text-netcrab-muted text-xl">→</span>
                       )}
                     </div>
                   ))}
@@ -127,26 +127,26 @@ export default function FlowsPage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <div className="text-sm text-navy-600">Sessions</div>
-                  <div className="font-semibold text-navy-900">
+                  <div className="text-sm text-netcrab-muted">Sessions</div>
+                  <div className="font-semibold text-netcrab-text">
                     {selectedFlow.sessions.toLocaleString()}
                   </div>
                 </div>
                 <div>
-                  <div className="text-sm text-navy-600">Completion Rate</div>
-                  <div className="font-semibold text-navy-900">
+                  <div className="text-sm text-netcrab-muted">Completion Rate</div>
+                  <div className="font-semibold text-netcrab-text">
                     {(selectedFlow.completionRate * 100).toFixed(1)}%
                   </div>
                 </div>
                 <div>
-                  <div className="text-sm text-navy-600">Avg Friction</div>
-                  <div className="font-semibold text-navy-900">
+                  <div className="text-sm text-netcrab-muted">Avg Friction</div>
+                  <div className="font-semibold text-netcrab-text">
                     {selectedFlow.avgFriction.toFixed(2)}
                   </div>
                 </div>
                 <div>
-                  <div className="text-sm text-navy-600">Avg Duration</div>
-                  <div className="font-semibold text-navy-900">{selectedFlow.avgDurationSec}s</div>
+                  <div className="text-sm text-netcrab-muted">Avg Duration</div>
+                  <div className="font-semibold text-netcrab-text">{selectedFlow.avgDurationSec}s</div>
                 </div>
               </div>
             </div>

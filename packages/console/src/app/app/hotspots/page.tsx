@@ -30,7 +30,7 @@ export default function HotspotsPage() {
     return (
       <Layout>
         <div className="flex items-center justify-center h-64">
-          <div className="text-navy-600">Loading hotspots...</div>
+          <div className="text-netcrab-muted">Loading hotspots...</div>
         </div>
       </Layout>
     );
@@ -39,7 +39,7 @@ export default function HotspotsPage() {
   if (error) {
     return (
       <Layout>
-        <div className="bg-coral-50 border border-coral-200 rounded-lg p-4 text-coral-800">
+        <div className="bg-netcrab-crab/20 border border-netcrab-crab rounded-lg p-4 text-netcrab-crab">
           Error: {error}
         </div>
       </Layout>
@@ -49,71 +49,71 @@ export default function HotspotsPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold text-navy-900">Hotspots</h1>
+        <h1 className="text-3xl font-bold text-netcrab-text">Hotspots</h1>
 
-        <div className="bg-white rounded-lg shadow border border-navy-200 overflow-hidden">
-          <table className="min-w-full divide-y divide-navy-200">
-            <thead className="bg-navy-50">
+        <div className="bg-netcrab-card rounded-lg border border-netcrab-surface overflow-hidden">
+          <table className="min-w-full divide-y divide-netcrab-surface">
+            <thead className="bg-netcrab-surface">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-navy-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-netcrab-text uppercase tracking-wider">
                   Screen / Route
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-navy-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-netcrab-text uppercase tracking-wider">
                   Friction
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-navy-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-netcrab-text uppercase tracking-wider">
                   Impact
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-navy-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-netcrab-text uppercase tracking-wider">
                   Efficiency
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-navy-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-netcrab-text uppercase tracking-wider">
                   Rage Clicks
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-navy-700 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-netcrab-text uppercase tracking-wider">
                   Dropoff
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-navy-200">
+            <tbody className="bg-netcrab-card divide-y divide-netcrab-surface">
               {hotspots.map((hotspot) => (
                 <tr
                   key={hotspot.screenId}
-                  className="hover:bg-navy-50 cursor-pointer"
+                  className="hover:bg-netcrab-surface/50 cursor-pointer transition-colors"
                   onClick={() => setSelectedHotspot(hotspot)}
                 >
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="font-medium text-navy-900">{hotspot.screenId}</div>
-                    <div className="text-sm text-navy-500">{hotspot.route}</div>
+                    <div className="font-medium text-netcrab-text">{hotspot.screenId}</div>
+                    <div className="text-sm text-netcrab-muted">{hotspot.route}</div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
-                      <span className="font-semibold text-navy-900">
+                      <span className="font-semibold text-netcrab-text">
                         {hotspot.avgFriction.toFixed(2)}
                       </span>
-                      <div className="ml-2 w-16 h-2 bg-navy-100 rounded-full overflow-hidden">
+                      <div className="ml-2 w-16 h-2 bg-netcrab-surface rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-coral-500"
+                          className="h-full bg-netcrab-crab"
                           style={{ width: `${hotspot.avgFriction * 100}%` }}
                         />
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-navy-600">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-netcrab-muted">
                     {hotspot.sessions.toLocaleString()} sessions
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="text-sm font-medium text-navy-700">
+                    <span className="text-sm font-medium text-netcrab-text">
                       {hotspot.avgEfficiency.toFixed(2)}
                     </span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="text-sm text-navy-600">
+                    <span className="text-sm text-netcrab-muted">
                       {(hotspot.rageClickRate * 100).toFixed(1)}%
                     </span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="text-sm text-navy-600">
+                    <span className="text-sm text-netcrab-muted">
                       {(hotspot.dropoffRate * 100).toFixed(1)}%
                     </span>
                   </td>
@@ -125,36 +125,36 @@ export default function HotspotsPage() {
 
         {/* Detail Panel */}
         {selectedHotspot && (
-          <div className="bg-white rounded-lg shadow border border-navy-200 p-6">
+          <div className="bg-netcrab-card rounded-lg border border-netcrab-surface p-6">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-navy-900">{selectedHotspot.screenId}</h2>
+              <h2 className="text-xl font-semibold text-netcrab-text">{selectedHotspot.screenId}</h2>
               <button
                 onClick={() => setSelectedHotspot(null)}
-                className="text-navy-500 hover:text-navy-700"
+                className="text-netcrab-muted hover:text-netcrab-text"
               >
                 ✕
               </button>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <div className="text-sm text-navy-600">Route</div>
-                <div className="font-medium text-navy-900">{selectedHotspot.route}</div>
+                <div className="text-sm text-netcrab-muted">Route</div>
+                <div className="font-medium text-netcrab-text">{selectedHotspot.route}</div>
               </div>
               <div>
-                <div className="text-sm text-navy-600">Sessions</div>
-                <div className="font-medium text-navy-900">
+                <div className="text-sm text-netcrab-muted">Sessions</div>
+                <div className="font-medium text-netcrab-text">
                   {selectedHotspot.sessions.toLocaleString()}
                 </div>
               </div>
               <div>
-                <div className="text-sm text-navy-600">Avg Time Spent</div>
-                <div className="font-medium text-navy-900">
+                <div className="text-sm text-netcrab-muted">Avg Time Spent</div>
+                <div className="font-medium text-netcrab-text">
                   {Math.round(selectedHotspot.avgTimeSpentMs / 1000)}s
                 </div>
               </div>
               <div>
-                <div className="text-sm text-navy-600">Rage Click Rate</div>
-                <div className="font-medium text-navy-900">
+                <div className="text-sm text-netcrab-muted">Rage Click Rate</div>
+                <div className="font-medium text-netcrab-text">
                   {(selectedHotspot.rageClickRate * 100).toFixed(1)}%
                 </div>
               </div>

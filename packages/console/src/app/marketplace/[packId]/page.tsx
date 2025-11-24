@@ -6,7 +6,7 @@ import { useParams } from 'next/navigation';
 export default function PackDetailPage() {
   const params = useParams();
   const packId = params.packId as string;
-  
+
   // Demo pack data
   const pack = {
     id: packId,
