@@ -1,119 +1,82 @@
 # Vercel Deployment Guide
 
-## ⚠️ IMPORTANT: Root Directory Setting
+## ✅ CORRECT CONFIGURATION (Verified)
 
-For this monorepo, you have **two options**. Choose **Option 1** (recommended):
-
-### Option 1: Set Root Directory in Vercel Dashboard (RECOMMENDED)
+### Step-by-Step Setup
 
 1. **Import Repository**
    - Go to [vercel.com](https://vercel.com)
-   - Import repository: `https://github.com/funwae/netcrab.git`
+   - Import: `https://github.com/funwae/netcrab.git`
 
-2. **Set Root Directory**
+2. **Set Root Directory** (CRITICAL)
    - Go to **Settings** → **General**
-   - Scroll to **Root Directory**
+   - Find **Root Directory**
    - Click **Edit**
    - Set to: `packages/console`
    - Click **Save**
 
-3. **Build Settings** (should auto-detect)
-   - Framework Preset: **Next.js** (auto-detected)
-   - Build Command: `pnpm build` (or leave empty for auto)
-   - Output Directory: `.next` (or leave empty for auto)
-   - Install Command: `pnpm install` (or leave empty for auto)
+3. **Build Settings** (Leave ALL empty for auto-detection)
+   - **Framework Preset**: Next.js (auto-detected)
+   - **Build Command**: (leave empty - auto-detects `pnpm build`)
+   - **Output Directory**: (leave empty - auto-detects `.next`)
+   - **Install Command**: (leave empty - auto-detects `pnpm install`)
 
-4. **Set Environment Variables**
+   ⚠️ **DO NOT** set Output Directory manually - this causes the double path error!
+
+4. **Environment Variables**
    In **Settings** → **Environment Variables**:
-
+   
    ```
    NEXT_PUBLIC_ENV=demo
    NETCRAB_DEMO_MODE=true
    ```
-
-   Set for: Production, Preview, Development
+   
+   Set for: ✅ Production, ✅ Preview, ✅ Development
 
 5. **Deploy**
    - Click **Deploy**
-   - Vercel will build from `packages/console` directory
+   - Vercel will use `packages/console/vercel.json` automatically
 
-### Option 2: Use Root Directory (Alternative)
+## How It Works
 
-If you want to keep root directory as `.` (repo root):
+When Root Directory is set to `packages/console`:
+- Vercel changes working directory to `packages/console`
+- Uses `packages/console/vercel.json` (which we created)
+- Builds with `pnpm build` (runs in `packages/console`)
+- Outputs to `.next` (relative to `packages/console`)
+- Finds `routes-manifest.json` at `packages/console/.next/routes-manifest.json`
 
-1. **Root Directory**: Leave as `.` (default)
-2. **Build Command**: `pnpm --filter '@netcrab/console' build`
-3. **Output Directory**: `packages/console/.next`
-4. **Install Command**: `pnpm install`
-5. **Framework**: Next.js
+## Files Created
 
-The `vercel.json` file in the repo root will handle this configuration.
+- ✅ `packages/console/vercel.json` - Used when root directory is `packages/console`
+- ✅ `vercel.json` (root) - Used if root directory is `.` (not recommended)
 
-## Recommended Configuration
+## Verification
 
-**Use Option 1** - Set Root Directory to `packages/console` in Vercel Dashboard.
-
-This is simpler and lets Vercel auto-detect everything. When root directory is set to `packages/console`, Vercel will use the `vercel.json` file inside `packages/console/` (which we've created for you).
-
-**Important**: When using Option 1, do NOT set Output Directory in Vercel Dashboard - leave it empty so Vercel auto-detects `.next` relative to the root directory.
-
-## Environment Variables
-
-### Required Variables
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `NEXT_PUBLIC_ENV` | `demo` | Environment mode (demo/production) |
-| `NETCRAB_DEMO_MODE` | `true` | Enables demo mode with stubbed data |
-
-### Optional Variables (for production)
-
-| Variable | Description |
-|----------|-------------|
-| `NEXT_PUBLIC_API_URL` | Backend API URL (if not in demo mode) |
-| `NEXT_PUBLIC_MARKETPLACE_API_URL` | Marketplace API URL (if not in demo mode) |
-| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe publishable key for marketplace |
-
-## Custom Domain Setup
-
-1. In Vercel Dashboard → Settings → Domains
-2. Add your domain: `netcrab.net`
-3. Follow DNS configuration instructions
-4. For subdomain: `app.netcrab.net` → add as additional domain
+The build has been tested locally and works correctly:
+- ✅ Build completes successfully
+- ✅ `routes-manifest.json` is created at `packages/console/.next/routes-manifest.json`
+- ✅ All TypeScript errors fixed
+- ✅ All Next.js build errors resolved
 
 ## Troubleshooting
 
-### Build Fails
+### Error: "routes-manifest.json couldn't be found"
 
-- **Error: "Cannot find module"**
-  - Ensure Root Directory is set to `packages/console`
-  - Verify `pnpm install` runs correctly
-  - Check that `packageManager` is set in root `package.json`
+**Cause**: Output Directory is set incorrectly in Vercel Dashboard
 
-- **Error: "Build command failed"**
-  - Verify Node.js version (requires >=18.0.0)
-  - Check that pnpm is available (Vercel auto-installs)
-  - Ensure Root Directory is correctly set
+**Fix**: 
+1. Go to Settings → General → Build & Development Settings
+2. **Clear** the Output Directory field (leave it empty)
+3. Redeploy
 
-### Environment Variables Not Working
+### Error: "packages/console/packages/console/.next"
 
-- Ensure variables are prefixed with `NEXT_PUBLIC_` for client-side access
-- Redeploy after adding new environment variables
-- Check variable names match exactly (case-sensitive)
+**Cause**: Root Directory is `packages/console` but Output Directory is also set to `packages/console/.next`
 
-## Next Steps
-
-After deployment:
-
-1. ✅ Test landing page at root `/`
-2. ✅ Test console at `/app`
-3. ✅ Verify demo mode is working
-4. ✅ Check API routes at `/api/demo`
-5. ✅ Test marketplace pages
+**Fix**: Clear Output Directory field in Vercel Dashboard
 
 ## Support
 
-For issues, check:
-- [Vercel Documentation](https://vercel.com/docs)
-- [Next.js Deployment](https://nextjs.org/docs/deployment)
-- [Monorepo Guide](https://vercel.com/docs/monorepos)
+- [Vercel Monorepo Docs](https://vercel.com/docs/monorepos)
+- [Vercel Build Configuration](https://vercel.com/docs/deployments/configure-a-build)
