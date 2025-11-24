@@ -30,10 +30,6 @@ export default function ConsoleSidebar() {
             <p className="text-xs text-netcrab-muted">Console</p>
           </div>
         </div>
-        <div className="text-sm text-netcrab-muted">
-          <div>demo-netcr</div>
-          <div className="text-xs">crm-web</div>
-        </div>
         <div className="mt-2">
           <span className="px-2 py-1 bg-netcrab-aqua/20 text-netcrab-aqua text-xs rounded">Demo Mode</span>
         </div>

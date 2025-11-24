@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Layout from '@/components/Layout';
 import { api, type OptInSettings } from '@/lib/api';
+import { useEffect, useState } from 'react';
 
 export default function OptInPage() {
   const [settings, setSettings] = useState<OptInSettings | null>(null);

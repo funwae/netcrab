@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Layout from '@/components/Layout';
 import { api, type CrabNote } from '@/lib/api';
+import { useEffect, useState } from 'react';
 
 export default function CrabNotesPage() {
   const [notes, setNotes] = useState<CrabNote[]>([]);
