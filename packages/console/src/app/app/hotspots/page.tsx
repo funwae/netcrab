@@ -10,8 +10,9 @@ export default function HotspotsPage() {
   const [selectedHotspot, setSelectedHotspot] = useState<HotspotDetail | null>(null);
 
   useEffect(() => {
+    const demoMode = process.env.NEXT_PUBLIC_ENV === 'demo' || process.env.NETCRAB_DEMO_MODE === 'true';
     const params = {
-      orgId: 'acme',
+      orgId: demoMode ? 'demo_netcrab' : 'acme',
       productId: 'crm-web',
       from: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
       to: new Date().toISOString().split('T')[0],

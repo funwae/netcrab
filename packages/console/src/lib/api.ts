@@ -111,6 +111,11 @@ class ApiClient {
     to: string;
     limit?: number;
   }): Promise<{ items: HotspotDetail[] }> {
+    if (DEMO_MODE && params.orgId === 'demo_netcrab') {
+      const response = await fetch(`/api/demo?endpoint=hotspots`);
+      if (!response.ok) throw new Error(`API error: ${response.statusText}`);
+      return response.json();
+    }
     const query = new URLSearchParams({
       orgId: params.orgId,
       productId: params.productId,
@@ -128,6 +133,11 @@ class ApiClient {
     to: string;
     limit?: number;
   }): Promise<{ flows: Flow[] }> {
+    if (DEMO_MODE && params.orgId === 'demo_netcrab') {
+      const response = await fetch(`/api/demo?endpoint=flows`);
+      if (!response.ok) throw new Error(`API error: ${response.statusText}`);
+      return response.json();
+    }
     const query = new URLSearchParams({
       orgId: params.orgId,
       productId: params.productId,
@@ -145,6 +155,11 @@ class ApiClient {
     to: string;
     limit?: number;
   }): Promise<{ notes: CrabNote[] }> {
+    if (DEMO_MODE && params.orgId === 'demo_netcrab') {
+      const response = await fetch(`/api/demo?endpoint=crab-notes`);
+      if (!response.ok) throw new Error(`API error: ${response.statusText}`);
+      return response.json();
+    }
     const query = new URLSearchParams({
       orgId: params.orgId,
       productId: params.productId,
